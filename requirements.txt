@@ -1,0 +1,9 @@
+asgiref
+Django
+django-ckeditor
+django-js-asset
+django-model-utils
+django-mptt
+Pillow
+sqlparse
+whitenoise

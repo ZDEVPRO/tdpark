@@ -1,0 +1,25 @@
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="post-single">
+                    <div class="post-thumb">
+                        <img src="{{ blogs.image.url }}" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="single-post-content">
+                        <div class="post-meta mt-4">
+                            <span class="post-date"><i class="fa fa-calendar-alt"></i>{{ blogs.create_on_date }}</span>
+                            <span class="post-comment"><i class="fa fa-clock"></i>{{ blogs.create_on_time }}</span>
+                        </div>
+
+                        <h3>{{ blogs.title }}</h3>
+                        <h5>{{ blogs.description1 }}</h5>
+                        <p>{{ blogs.description2 }}</p>
+                        <p>{{ blogs.description3 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

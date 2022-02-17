@@ -1,0 +1,197 @@
+{% load static %}
+
+
+<section class="banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-8">
+                {% for rs in home_title_latest %}
+                    <div class="banner-content center-heading">
+                        <span class="subheading">{{ rs.sub_title }}</span>
+                        <h1>{{ rs.title }}</h1>
+                        <a href="{{ rs.slug_button1 }}" class="btn btn-main"><i
+                                class="fa fa-list-ul mr-2"></i>{{ rs.button1 }} </a>
+                        <a href="{{ rs.slug_button2 }}" class="btn btn-tp ">{{ rs.button2 }} <i
+                                class="fa fa-angle-right ml-2"></i></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+
+
+<section class="section-padding popular-course pb-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <span class="subheading">TD-PARK</span>
+                    <h3>Bizning mashxur kurslarimiz</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="course-btn text-lg-right"><a href="{% url 'courses' %}" class="btn btn-main"><i class="fa fa-store mr-2"></i>Barcha Kurslar</a></div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for rs in featured_course_latest %}
+            <div class="col-lg-4 col-md-6">
+                <div class="course-block">
+                    <div class="course-img">
+                        <a href="{% url 'course_details' rs.course.id rs.course.slug %}"><img src="{{ rs.course.image.url }}" alt="" class="img-fluid"></a>
+                    </div>
+
+                    <div class="course-content">
+                        <div class="course-price ">{{ rs.course.price }}</div>
+
+                        <h4><a href="{% url 'course_details' rs.course.id rs.course.slug %}">{{ rs.course.title }}</a></h4>
+                        <p>{{ rs.course.description1 }}</p>
+
+                        <div class="course-footer d-lg-flex align-items-center justify-content-between">
+
+                            <div class="buy-btn"><a href="{% url 'course_details' rs.course.id rs.course.slug %}" class="btn btn-main-2 btn-small">Ko'rish</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% block about_section %}{% include 'components/about_section.html' %}{% endblock %}
+<section class="feature-2">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-item feature-style-2">
+                    <div class="feature-icon">
+                        <i class="bi bi-badge2"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Ekspert ustozlar</h4>
+                        <p>Behind the word mountains, far from the countries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-item feature-style-2">
+                    <div class="feature-icon">
+                        <i class="bi bi-article"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Sifatli ta'lim</h4>
+                        <p>Behind the word mountains, far from the countries </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-item feature-style-2">
+                    <div class="feature-icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>24/7 qo'llab quvvatlash xizmati</h4>
+                        <p>Behind the word mountains, far from the countries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-item feature-style-2">
+                    <div class="feature-icon">
+                        <i class="bi bi-rocket2"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Sertifikat</h4>
+                        <p>Behind the word mountains, far from the countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="counter-wrap section-padding counter-section">
+    <div class="container">
+        {% for rs in total_latest %}
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-item">
+                        <i class="fa fa-book-reader"></i>
+                        <div class="count">
+                            <span class="counter h2">{{ rs.num1 }}</span>
+                        </div>
+                        <p>Expert Instructors</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-item">
+                        <i class="fa fa-chalkboard-teacher"></i>
+                        <div class="count">
+                            <span class="counter h2">{{ rs.num2 }}</span>
+                        </div>
+                        <p>Total Courses</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-item">
+                        <i class="fa fa-clipboard-list"></i>
+                        <div class="count">
+                            <span class="counter h2">{{ rs.num3 }}</span>
+                        </div>
+                        <p>Happy Students</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-item">
+                        <i class="ti-home"></i>
+                        <div class="count">
+                            <span class="counter h2">{{ rs.num4 }}</span>
+                        </div>
+                        <p>Creative Events</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="blog section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-heading center-heading">
+                    <span class="subheading">Blog News</span>
+                    <h3>Latest Blog News</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicin gelit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            {% for rs in home_blog_latest %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-item">
+                    <a href="{% url 'blog_details' rs.blog.id rs.blog.slug %}"><img src="{{ rs.blog.image.url }}" alt="" class="img-fluid"></a>
+                    <div class="blog-content">
+                        <div class="entry-meta">
+                            <span><i class="fa fa-calendar-alt"></i>{{ rs.blog.create_on_time }}</span>
+                            <span><i class="fa fa-clock"></i>{{ rs.blog.create_on_date }}</span>
+                        </div>
+
+                        <h2><a href="{% url 'blog_details' rs.blog.id rs.blog.slug %}">{{ rs.blog.title }}</a></h2>
+                        <p>{{ rs.blog.description1 }}</p>
+                        <a href="{% url 'blog_details' rs.blog.id rs.blog.slug %}" class="btn btn-main btn-small"><i class="fa fa-plus-circle mr-2"></i>O'qish</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

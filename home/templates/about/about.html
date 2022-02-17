@@ -1,0 +1,79 @@
+{% load static %}
+
+<section class="page-header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="page-header-content">
+                    <h1>Biz kimmiz</h1>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#">Asosiy</a>
+                        </li>
+                        <li class="list-inline-item">/</li>
+                        <li class="list-inline-item">
+                            Biz haqimiz
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block about_section %}{% include 'components/about_section.html' %}{% endblock %}
+
+{% block teachers %}{% include 'components/teachers.html' %}{% endblock %}
+
+<section class="counter-wrap mt-105">
+    <div class="container">
+        <div class="row">
+            {% for total in total_latest %}
+            <div class="col-lg-12 counter-inner">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="counter-item">
+                            <i class="fa fa-book-reader"></i>
+                            <div class="count">
+                                <span class="counter h2">{{ total.num1 }}</span>
+                            </div>
+                            <p>O'quvchilar soni</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="counter-item">
+                            <i class="fa fa-chalkboard-teacher"></i>
+                            <div class="count">
+                                <span class="counter h2">{{ total.num2 }}</span>
+                            </div>
+                            <p>O'qituvchilar soni</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="counter-item">
+                            <i class="fa fa-clipboard-list"></i>
+                            <div class="count">
+                                <span class="counter h2">{{ total.num3 }}</span>
+                            </div>
+                            <p>Guruxlar soni</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="counter-item">
+                            <i class="ti-home"></i>
+                            <div class="count">
+                                <span class="counter h2">{{ total.num4 }}</span>
+                            </div>
+                            <p>Xonalar soni</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section style="margin-bottom: -130px;" class="section-padding category-section">
+</section>

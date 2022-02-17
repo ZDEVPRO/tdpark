@@ -1,0 +1,25 @@
+{% load static %}
+<section class="about-section section-padding about-2">
+    <div class="container">
+        {% for rs in about_section_latest %}
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="about-img2">
+                    <img src="{% static 'assets/images/banner/banner-8.png' %}" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="section-heading">
+                    <span class="subheading">TD-PARK</span>
+                    <h3>{{ rs.title }}</h3>
+                </div>
+
+                <p>{{ rs.description }}</p>
+
+                <a href="{{ rs.slug_button }}" class="btn btn-main"><i class="fa fa-check mr-2"></i>{{ rs.button }}</a>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
